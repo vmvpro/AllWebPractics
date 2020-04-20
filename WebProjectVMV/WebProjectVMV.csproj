@@ -70,7 +70,11 @@
     <Content Include="gulpFile.js" />
     <Content Include="indexWork.html" />
     <Content Include="source\css\style.min.css" />
-    <Content Include="source\js\script01.js" />
+    <Content Include="source\jquery\jquery.js" />
+    <Content Include="source\jquery\jquery.min.js" />
+    <Content Include="source\jquery\jquery.slim.js" />
+    <Content Include="source\jquery\jquery.slim.min.js" />
+    <Content Include="source\js\myScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="source\scss\style01.scss" />
+    <Content Include="source\jquery\jquery.min.map" />
+    <Content Include="source\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
