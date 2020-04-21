@@ -69,10 +69,10 @@
   <ItemGroup>
     <Content Include="gulpFile.js" />
     <Content Include="index_book.html" />
-    <Content Include="indexAnimationsCss.html" />
+    <Content Include="index_animation.html" />
     <Content Include="indexWork.html" />
     <Content Include="source\css\animation\style.min.css" />
-    <Content Include="source\css\style.min.css" />
+    <Content Include="source\css\book\style.min.css" />
     <Content Include="source\img\2xkinglogo.png" />
     <Content Include="source\img\icon-calendar.png" />
     <Content Include="source\img\icon-heart.png" />

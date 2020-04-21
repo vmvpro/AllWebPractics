@@ -14,7 +14,7 @@ body {
 /* Responsive page rules at bottom of style sheet */
 
 h1 {
-	background-image: url(../img/kinglogo.png);
+	background-image: url(../../img/kinglogo.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	text-align: center;
@@ -98,7 +98,7 @@ li:hover {
 .complete {
 	background-color: #999;
 	color: #fff;
-	background-image: url("../img/icon-trash.png");
+	background-image: url("../../img/icon-trash.png");
 	background-position: right, right;
 	background-repeat: no-repeat;
 	border-top: 1px solid #666;
@@ -108,7 +108,7 @@ li:hover {
 li a {
 	color: #fff;
 	text-decoration: none;
-	background-image: url("../img/icon-link.png");
+	background-image: url("../../img/icon-link.png");
 	background-position: center, right;
 	background-repeat: no-repeat;
 	padding-right: 225px;
@@ -163,7 +163,7 @@ p {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	h1 {
-		background-image: url(../img/2xkinglogo.png);
+		background-image: url(../../img/2xkinglogo.png);
 		background-size: 72px 72px;
 	}
 }

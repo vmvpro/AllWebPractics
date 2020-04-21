@@ -50,6 +50,24 @@ function styleItemsChild() {
 	
 }
 
+function addElementDOM() {
+	// Создаем новый элемент и сохраняем его в переменной.
+	var newEl = document.createElement('li');
+
+	// Создаем текстовый узел и сохраняем его в переменной.
+	var newText = document.createTextNode('зернистый творог');
+
+	// Прикрепляем новый текстовый узел к новому элементу.
+	newEl.appendChild(newText);
+
+	// Находим позицию, на которую должен быть поставлен новый элемент.
+	var position = document.getElementsByTagName('ul')[0];
+
+	// Ставим новый элемент на эту позицию.
+	position.appendChild(newEl);
+}
+
+
 //--------------------------------------
 $('li').mouseover(function (e) {
 	e.stopPropagation();
@@ -165,3 +183,24 @@ function containsListItem() {
 	//console.log();
 	//console.dir()
 }
+
+//-----------------------------------
+
+function renameNameItem2() {
+	let page = document.getElementById("page");
+	let tagUl = page.getElementsByTagName("ul")[0];
+
+	let listItems = tagUl.getElementsByTagName("li");
+
+	console.dir(listItems[0]);
+}
+
+function add_P() {
+	let itemOne = document.getElementById("one");
+
+	let itemOneText = itemOne.textContent;
+
+	let el = document.getElementById("scriptResultVMV");
+	el.innerHTML = "<p>Абзац VMV добавлен</p>";
+}
+
