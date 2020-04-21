@@ -68,13 +68,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpFile.js" />
+    <Content Include="bookJsAndJquery05.html" />
+    <Content Include="indexAnimationsCss.html" />
     <Content Include="indexWork.html" />
+    <Content Include="source\css\animation\style.min.css" />
     <Content Include="source\css\style.min.css" />
+    <Content Include="source\img\2xkinglogo.png" />
+    <Content Include="source\img\icon-calendar.png" />
+    <Content Include="source\img\icon-heart.png" />
+    <Content Include="source\img\icon-link.png" />
+    <Content Include="source\img\icon-trash.png" />
+    <Content Include="source\img\kinglogo.png" />
     <Content Include="source\jquery\jquery.js" />
     <Content Include="source\jquery\jquery.min.js" />
     <Content Include="source\jquery\jquery.slim.js" />
     <Content Include="source\jquery\jquery.slim.min.js" />
-    <Content Include="source\js\myScript.js" />
+    <Content Include="source\js\book\list.js" />
+    <Content Include="source\js\my\animationCss.js" />
+    <Content Include="source\js\my\script05.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,9 +95,10 @@
     <Content Include="package.json" />
     <Content Include="libman.json" />
     <None Include="packages.config" />
-    <Content Include="source\scss\style01.scss" />
+    <Content Include="source\scss\c05.scss" />
     <Content Include="source\jquery\jquery.min.map" />
     <Content Include="source\jquery\jquery.slim.min.map" />
+    <Content Include="source\scss\animation\animation01.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,9 +106,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="source\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

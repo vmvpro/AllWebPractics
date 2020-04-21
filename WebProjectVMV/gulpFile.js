@@ -23,13 +23,14 @@ var rimraf = require("rimraf");
 
 // Переменные
 
-var number = "Work";
+var folder = "animation";
 
 var htmlFile = {
-	Name: "index" + number + ".html"
+	//Name: "bookJsAndJquery05.html"
+	Name: "indexAnimationsCss.html"
 };
 
-var nameFileCss = "style" + number;
+//var nameFileCss = "style" + number;
 
 var source = {
 	//webroot: "./wwwroot/"
@@ -55,7 +56,7 @@ gulp.task('ClearCssOfScss', ClearCssOfScss);
 // Копирование будет происходить из папки scss в css
 function workScss(done) {
 
-	gulp.src([directoryPath.Root + "scss/**/*.scss"],
+	gulp.src([directoryPath.Root + "scss/" + folder +"/*.scss"],
 		"!" + directoryPath.Root + "**/*.css",
 		"!" + directoryPath.Root + "**/*.map")
 		// Предназначенно для просмотра стилей в браузере
@@ -87,7 +88,7 @@ function workScss(done) {
 		//.pipe(sourcemaps.write("./"))
 		//----------------------------------------------
 		// Сохранить в конечную папку
-		.pipe(gulp.dest(directoryPath.Root + "css"))
+		.pipe(gulp.dest(directoryPath.Root + "css/" + folder))
 		.pipe(browserSync.stream())
 		;
 
@@ -167,14 +168,15 @@ function browserReload(done) {
 
 function watchFiles() {
 	gulp.watch([
-		directoryPath.Root + "scss/**/*.scss"
+		directoryPath.Root + "scss/" + folder + "/*.scss"
 	]
 		, workScss);
 
-	gulp.watch([directoryPath.Root + "scss/style.min.css"], browserReload);
+	//gulp.watch([directoryPath.Root + "scss/style.min.css"], browserReload);
+	gulp.watch([directoryPath.Root + "css/" + folder + "/*.css"], browserReload);
 
 	gulp.watch(["./**/*.html"], browserReload);
-	gulp.watch([directoryPath.Root + "js/*.js"], browserReload);
+	gulp.watch([directoryPath.Root + "js/**/*.js"], browserReload);
 	//gulp.watch(["./css/*.css", "!./css/*.map"], workCssMin);
 	//gulp.watch(["./css.min/*.css"], browserReload);
 }

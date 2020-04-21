@@ -1,0 +1,34 @@
+﻿h1{
+	color:blue;
+}
+
+#list{
+	list-style:none;
+	//font-weight:bold;
+	display:block;
+
+}
+
+#list li{
+	float:left;
+}
+
+ul.list {
+	list-style: none;
+	display: block;
+}
+
+ul.list li {
+	float: left;
+}
+
+ul.list li:last-child::after {
+	content: "";
+	clear: both;
+}
+
+.clear-float:after{
+	content:"";
+	display:block;
+	clear:both;
+}
