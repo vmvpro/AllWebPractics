@@ -1,12 +1,11 @@
-﻿h1{
-	color:blue;
+﻿h1 {
+	color: blue;
 }
 
-#list{
-	list-style:none;
+#list {
+	list-style: none;
 	//font-weight:bold;
-	display:block;
-
+	display: block;
 }
 
 
@@ -26,15 +25,41 @@ ul.list li {
 	padding: 10px;
 	//width: 70px;
 	border: 1px solid red;
-
+	//-----------------------
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color: #f9f9f9;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: #666666;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+	//-----------------------
 	/*align-content: center;
 	text-align: center;
 	align-items: center;*/
 }
 
-
-.clear-float:after{
-	content:"";
-	display:block;
-	clear:both;
+ul.list li:hover {
+	background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color: #e9e9e9;
 }
+
+ul.list li:active {
+	position: relative;
+	top: 3px;
+}
+
+
+
+	.clear-float:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
