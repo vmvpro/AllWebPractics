@@ -53,10 +53,9 @@ ul.list li:hover {
 
 ul.list li:active {
 	position: relative;
-	top: 3px;
+	//top: 3px;
+	bottom:-3px;
 }
-
-
 
 	.clear-float:after {
 		content: "";

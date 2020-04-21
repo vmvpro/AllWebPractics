@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gulpFile.js" />
-    <Content Include="bookJsAndJquery05.html" />
+    <Content Include="index_book.html" />
     <Content Include="indexAnimationsCss.html" />
     <Content Include="indexWork.html" />
     <Content Include="source\css\animation\style.min.css" />
@@ -95,10 +95,12 @@
     <Content Include="package.json" />
     <Content Include="libman.json" />
     <None Include="packages.config" />
-    <Content Include="source\scss\c05.scss" />
+    <Content Include="source\scss\book\c05.scss" />
     <Content Include="source\jquery\jquery.min.map" />
     <Content Include="source\jquery\jquery.slim.min.map" />
     <Content Include="source\scss\animation\animation01.scss" />
+    <Content Include="source\scss\animation\animationList02.scss" />
+    <Content Include="source\scss\animation\webDesigner.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
