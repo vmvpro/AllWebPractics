@@ -204,3 +204,42 @@ function add_P() {
 	el.innerHTML = "<p>Абзац VMV добавлен</p>";
 }
 
+
+
+// --------- Определение текущего элемента списка -----------
+
+curentItemList();
+
+function curentItemList() {
+	
+	function highlightThis() {
+		this.style.backgroundColor = 'yellow';
+		alert(this.tagName);
+		this.style.backgroundColor = '';
+	}
+
+	let page = document.getElementById("page");
+	let tagUl = page.getElementsByTagName("ul")[0];
+
+	let listItems = tagUl.getElementsByTagName("li");
+
+	for (var i = 0; i < listItems.length; i++) {
+		listItems[i].addEventListener("click", messageItem, true);
+		//elems[i].addEventListener("click", highlightThis, false);
+	}
+}
+
+function messageItem() {
+	let itemOne = document.getElementById("one");
+
+	let itemOneText = itemOne.textContent;
+
+	let el = document.getElementById("scriptResultVMV");
+
+	//console.log(this);
+	console.dir(this);
+
+	el.innerHTML = "<p>" + this.innerHTML + "</p>";
+	console.dir(el);
+
+}
