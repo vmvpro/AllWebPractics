@@ -9,23 +9,29 @@
 
 }
 
-#list li{
-	float:left;
-}
+
 
 ul.list {
 	list-style: none;
-	display: block;
+	display: flex;
+	//height: 30px;
+	align-items: center;
+	justify-content: flex-start;
+	border: 2px solid blue;
 }
 
 ul.list li {
-	float: left;
+	display: flex;
+	margin: 10px;
+	padding: 10px;
+	//width: 70px;
+	border: 1px solid red;
+
+	/*align-content: center;
+	text-align: center;
+	align-items: center;*/
 }
 
-ul.list li:last-child::after {
-	content: "";
-	clear: both;
-}
 
 .clear-float:after{
 	content:"";
