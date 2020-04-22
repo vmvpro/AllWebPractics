@@ -244,4 +244,48 @@ function messageItem() {
 
 }
 
-//
+//УДАЛЕНИЕ АТРИБУТОВ
+// Получаем первый элемент
+//var firstItem = document.getElementById('one');    
+// Если у него есть атрибут class
+//if (firstItem.hasAttribute('class')) {
+//	// Удаляем этот атрибут class
+//	firstItem.removeAttribute('class');                         
+//}
+
+//Выполнение задачи
+function taskAll05() {
+	// ДОБАВЛЕНИЕ ЭЛЕМЕНТОВ К НАЧАЛУ И К КОНЦУ СПИСКА
+	// Получаем элемент ul
+	var list = document.getElementsByTagName('ul')[0];
+	// ДОБАВЛЕНИЕ НОВОГО ЭЛЕМЕНТА К КОНЦУ СПИСКА
+	// Создаем элемент
+	var newItemLast = document.createElement('li');
+	// Создаем текстовый узел
+	var newTextLast = document.createTextNode('деревенская сметана');
+	// Добавляем текстовый узел к элементу
+	newItemLast.appendChild(newTextLast);
+	// Добавляем элемент к концу списка
+	list.appendChild(newItemLast);      
+
+	// ДОБАВЛЕНИЕ НОВОГО ЭЛЕМЕНТА К НАЧАЛУ СПИСКА
+	var newItemFirst = document.createElement('li');                                               // Создаем элемент
+	var newTextFirst = document.createTextNode('белокочанная капуста');        // Создаем текстовый узел
+	newItemFirst.appendChild(newTextFirst);                                                           // Добавляем текстовый узел к элементу
+	// Добавляем элемент в начало списка
+	list.insertBefore(newItemFirst, list.firstChild);
+	// ДОБАВЛЯЕМ КЛАСС COOL КО ВСЕМ ЭЛЕМЕНТАМ СПИСКА
+
+	let page = document.getElementById("page");
+	let tagUl = page.getElementsByTagName("ul")[0];
+
+	let listItems = tagUl.getElementsByTagName("li");
+
+	// ДОБАВЛЯЕМ В ЗАГОЛОВОК ИНФОРМАЦИЮ О КОЛИЧЕСТВЕ ЭЛЕМЕНТОВ В СПИСКЕ
+	var heading = document.querySelector('h2');                                                  // Элемент h2
+	var headingText = heading.firstChild.nodeValue;                                           // Текст элемента h2
+	var totalItems = listItems.length;                                                                     // Количество элементов li
+	var newHeading = headingText + '<span>' + totalItems + '</span>';           // Контент
+	heading.innerHTML = newHeading;                                                                // Обновляем h2
+
+}
