@@ -24,12 +24,13 @@ var rimraf = require("rimraf");
 // Переменные
 
 var folder = "book";
+var number = "06";
 //var folder = "animation";
 
 
 var htmlFile = {
 	//Name: "bookJsAndJquery05.html"
-	Name: "index_" + folder + ".html"
+	Name: "index_" + folder + number + ".html"
 };
 
 //var nameFileCss = "style" + number;
