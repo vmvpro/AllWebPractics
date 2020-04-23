@@ -163,24 +163,47 @@ function dismissNote() {                          // Объявляем функ
 //elClose.addEventListener('click', dismissNote, false);
 
 //----------------------------------------------------------
-var text_ = document.getElementById("textArea");
-var counter_ = document.getElementById("counter");
+//var text_ = document.getElementById("textArea");
+//var counter_ = document.getElementById("counter");
 
-text_.addEventListener("keypress",
-	function (e) {
-		console.dir(text_);
-		console.dir(counter_);
-		console.dir(e);
-		//console.dir(e.target);
+//text_.addEventListener("keypress",
+//	function (e) {
+//		console.dir(text_);
+//		console.dir(counter_);
+//		console.dir(e);
+//		//console.dir(e.target);
 
 		
-		let count = text_.value.length + 1;
-		if (count > 5) {
-			e.preventDefault();
-		}
+//		let count = text_.value.length + 1;
+//		if (count > 5) {
+//			e.preventDefault();
+//		}
 
-		counter_.value = text_.value.length;
-	}, false);
+//		counter_.value = text_.value.length;
+//	}, false);
 
+//----------------------------------------------------
+
+//--------------   РАБОТА С ФОРМОЙ   -----------------
+
+var elForm, elSelectPackage, elPackageHint, elTerms;                                                                            // Объявляем переменные
+elForm = document.getElementById('formSignup');                                                                    // Сохраняем элементы
+elSelectPackage = document.getElementById('package');
+elPackageHint = document.getElementById('packageHint');
+elTerms = document.getElementById('terms');
+elTermsHint = document.getElementById('termsHint');
+
+function checkTerms(event) {                                                                                                                // Объявляем функцию
+	if (!elTerms.checked) {                                                                                                                           // Если флажок сброшен
+		elTermsHint.innerHTML = 'Вы должны согласиться с условиями соглашения.';                         // Отображаем сообщение
+		event.preventDefault();                                                                                                                        // Не отправлять форму
+	}
+}
+//Создаем слушатели событий: событие submit 
+// вызывает checkTerms()
+elForm.addEventListener('submit', checkTerms, false);
+elSelectPackage.addEventListener('change', packageHint, false); 
+
+//----------------------------------------------------
 
 

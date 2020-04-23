@@ -10,8 +10,29 @@
 	<!-- D:\Multimedia\Книги\Наука\Programing\0_Telegram\JavaScript и jQuery. Интерактивная разработка - (Джон Дакетт) -->
 </head>
 <body>
-
+	
 	<div id="page">
+		<h1>Король вкуса</h1>
+		<form id="formSignup" method="post" action="http://xanadu.myjino.ru/example/">
+			<h2>План подписки</h2>
+
+			<label for="package" class="selectbox">Выберите план: </label>
+			<select id="package">
+				<option value="annual">1 год (500 $)</option>
+				<option value="monthly">1 месяц (50 $)</option>
+			</select>
+			<div id="packageHint" class="tip"></div>
+
+			<input type="checkbox" id="terms" />
+			<label for="terms" class="checkbox">Принимаю условия соглашения</label>
+			<div id="termsHint" class="warning"></div>
+
+			<input type="submit" value="Далее" />
+
+		</form>
+	</div>
+
+	<!--<div id="page">
 		<h1>Король вкуса</h1>
 		<h2>Новый аккаунт</h2>
 		<form method="post" action="http://xanadu.myjino.ru/example/">
@@ -28,7 +49,7 @@
 			<input type="submit" value="Регистрация" />
 
 		</form>
-	</div>
+	</div>-->
 
 	<!--<div id="page">
 			<h1>Король вкуса</h1>
