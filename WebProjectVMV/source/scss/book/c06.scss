@@ -237,8 +237,11 @@ select, option {
 	height: 95%;
 	width: 95%;
 	position: absolute;
-	top: 1em;
+	//position: relative;
+	//top: -400px;
+	top:10px;
 	left: 0;
+	z-index:1;
 }
 
 #note .header + div {
