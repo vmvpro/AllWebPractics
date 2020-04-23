@@ -1,21 +1,138 @@
-﻿function checkUsername() {                                                                   // Объявляем функцию
-	var elMsg = document.getElementById('feedback');                          // Получаем элемент обратной связи
-	var elUsername = document.getElementById('username');               // Получаем имя, введенное пользователем
-	if (elUsername.value.length < 5) {                                                        // Если имя пользователя слишком короткое
-		elMsg.textContent = 'Username must be 5 characters or more';      // Указываем сообщение
-	} else {                                                                                                      // Иначе
-		elMsg.textContent = '';                                                                          // Сбрасываем сообщение
-	}
-}
+﻿//function checkUsername() {                                                                   // Объявляем функцию
+//	var elMsg = document.getElementById('feedback');                          // Получаем элемент обратной связи
+//	var elUsername = document.getElementById('username');               // Получаем имя, введенное пользователем
+//	if (elUsername.value.length < 5) {                                                        // Если имя пользователя слишком короткое
+//		elMsg.textContent = 'Ошибка!!! Имя должно состоять не менее с 6 символов';      // Указываем сообщение
+//	} else {                                                                                                      // Иначе
+//		elMsg.textContent = '';                                                                          // Сбрасываем сообщение
+//	}
+//}
 
-//
+////
+
+////document.onload = onloadDoc();
+
+////onloadDoc();
+
+//function onloadDoc() {
+//	let userName = document.getElementById("username");
+
+//	//Test
+//	//userName.onblur = function() {
+//	//	console.log("Выход из username");
+//	//}
+
+//	userName.onblur = checkUsername();
+//}
+
+//---------------------------------------------
+
+//var elUsername = document.getElementById('username');   // Получаем введенное имя пользователя
+//var elMsg = document.getElementById('feedback');   // Получаем элемент для обратной связи
+
+//function checkUsername(minLength) {                     // Объявляем функцию
+//	if (elUsername.value.length < minLength) {            // Если имя пользователя слишком короткое
+//		// Задаем сообщение об ошибке
+//		elMsg.innerHTML = 'Имя пользователя должно содержать не менее ' + minLength + ' символов';
+//	} else {                                             // Иначе
+//		elMsg.innerHTML = '';                              // Сбрасываем сообщение
+//	}
+//}
+
+//elUsername.addEventListener('blur', function () {        // Когда элемент выходит из фокуса
+//	checkUsername(5);                                     // Здесь передаем аргументы
+//}, false);
+
+//--------------------------------------------------
+
+//Использование слушателей событий
+//function checkUsername() {
+//	// Объявляем функцию
+//	var elMsg = document.getElementById('feedback');
+
+//	// Получаем элемент обратной связи
+//	if (this.value.length < 5) {
+//		// Если имя пользователя слишком короткое
+//		elMsg.textContent = 'Ошибка!!! Имя пользователя должно содержать не менее 5 символов'; // Указываем сообщение
+//	} else {
+
+//		elMsg.textContent = '';                            // Сбрасываем сообщение
+//	}
+//}
+
+//// Получаем имя, введенное пользователем
+//var elUsername = document.getElementById('username');  
+//// При выходе элемента из фокуса вызвать функцию checkuserName()
+//elUsername.addEventListener('blur', checkUsername, false);
+
+////var btnOk = document.getElementsByClassName("btnOk").item(0);
+//var btnOk = document.getElementsByClassName("btnOk")[0];
+//btnOk.addEventListener('click', function() {
+//	alert("OK!!!");
+//}, false);
+
+//--------------------------------------------------
+//Использование слушателей событий с объектом event
+
+//function checkLength(e, minLength) {         // Объявляем функцию
+//	var el, elMsg;              
+
+//	// Получаем цель события
+//	var curentObject = e.target; //username
+
+//	// Получаем следующий смежный элемент этого элемента
+//	// В нашем случае это div 
+//	elMsg = curentObject.nextSibling;
+
+//	if (el.value.length < minLength) {         
+//		elMsg.innerHTML =
+//			'Имя пользователя должно содержать не менее ' + minLength + ' символов';
+//	} else {                                   
+//		elMsg.innerHTML = '';                  
+//	}
+//}
+
+//// Получаем имя, введенное пользователем
+//var elUsername = document.getElementById('username');
+
+//elUsername.addEventListener('blur',
+//	function(e) {
+//		 checkLength(e, 5);
+//	},
+//	// Захватываем на этапе всплывания
+//	false);
+
+//--------------------------------------------------
+
+var list = document.getElementById("shoppingList");
+
+list.addEventListener
+	("click",
+	function (e) {
+
+		// Получаем ссылку того элемента, по которому был сделан щелчок
+		let target = e.target; 
+		// Получаем соответствующий элемент из этого списка
+		let currentItem = target.parentNode;
+		// Получаем соответствующий список
+		let list = currentItem.parentNode;
+
+		//let currentChild = ""
+
+		if (currentItem.className === "complete") {
+			console.log("Удален");
+			list.removeChild(currentItem);
+
+			// запрещаем переходить куда либо по этой ссылке
+			e.preventDefault();                          
+		} else {
+			console.log("Нельзя удалять");
+		}
+
+		console.log(parentNode);
+		console.dir(parentNode);
+	}, false);
+
+//--------------------------------------------------
 
 
-onloadDoc();
-
-function onloadDoc() {
-	let userName = document.getElementById("username");
-	userName.onblur = function() {
-		console.log("Выход из username");
-	}
-}
