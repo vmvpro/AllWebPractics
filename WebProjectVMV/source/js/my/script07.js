@@ -103,7 +103,33 @@ $(function () {
 
 	//f5();
 
+	//f6();
+
+	f7();
 });
+
+//Добавление элементов
+function f7() {
+	$('ul').before('<p>Список обновлен</p>');
+
+	$('li.hot').prepend('+ ');
+
+	$('#page ul').append('<li>кукуруза <em>без ГМО</em></li>');
+
+	let item = $('<li>кукуруза <em>без ГМО 2</em></li>');
+
+	$('li:last').after(item);
+
+
+}
+
+function f6() {
+	//Обновление элементов
+	$('li:contains("кедровые")').text('миндаль');
+	$('li.hot').html(function () {
+		return '<em>' + $(this).text() + '</em>';
+	});
+}
 
 function f5() {
 
