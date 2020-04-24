@@ -113,8 +113,20 @@ $(function () {
 
 	//f10();
 
-	f11();
+	//f11();
+
+	f12();
 });
+
+//ПОИСК ЭЛЕМЕНТОВ ПО ИХ ПОРЯДКОВОМУ НОМЕРУ
+function f12() {
+	let $li = $('li');
+	$li.eq(2).addClass('cool');
+
+	$li.filter(':lt(2)').addClass('complete');
+	$li.filter(':gt(2)').removeClass('hot');
+}
+
 
 // Применение фильтров
 function f11() {
