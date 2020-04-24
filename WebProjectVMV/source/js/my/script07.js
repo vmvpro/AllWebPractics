@@ -9,16 +9,16 @@
 //$('li.hot').addClass('favorite');
 
 //$('li[id="one"]').hide().delay(500);
-	//.fadeIn(1400).hide();
+//.fadeIn(1400).hide();
 //----------------------------------------------------
 //$(function () {
 //	let pTag = $('p');
 //	pTag.append('Список VMV обновлен!!!');
-	
+
 //	//console.dir($pTag);
 
 //	pTag.addClass('notice');
-	
+
 //	console.dir(pTag);
 
 //	$('ul').before(pTag);
@@ -96,12 +96,30 @@
 //	.delay(1000)
 //	.fadeIn(2000);
 
-$(function() {
+$(function () {
 	//f1();
 	//f3();
-	f4();
+	//f4();
+
+	//f5();
 
 });
+
+function f5() {
+
+	//$('li:contains("кедровые")').text('миндаль');
+	//$('li.hot').html(function () {
+	//	return '<em>' + $(this).text() + '</em>';
+	//});
+
+	//let $ul = $('.page>ul')[0];
+	//let $li01 = $ul.filter('.hot');
+
+	//console.dir($ul);
+	//console.dir($li01);
+	
+	//$('li#one').remove();
+}
 
 
 function f4() {
@@ -115,7 +133,7 @@ function f3() {
 	let txt = ul.html();
 	console.dir(txt);
 
-	
+
 
 }
 
@@ -128,7 +146,7 @@ function f2() {
 
 	let li = ul[0].firstChild;
 	li.append('vmv');
-	
+
 	//li.text("vmv");
 	//console.dir(ul);
 	//console.dir(li);
