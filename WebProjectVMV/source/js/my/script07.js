@@ -90,3 +90,34 @@
 //	});
 //});
 
+//==================================================
+//$('li[id!="one"]')
+//	.hide()
+//	.delay(1000)
+//	.fadeIn(2000);
+
+$(function() {
+	f1();
+
+
+});
+
+function f1() {
+	$('#one').addClass('cool');
+
+	// добавить элемент
+	//$('ul').append('<li>vmv</li>');
+	$('ul').append('<li>');
+	//$('ul').prepend('<li>vmv</li>');
+
+	//Определить элемент без класса и ИД
+	var $vmvLi = $('ul li:not([id]):not([class])');
+	$vmvLi.addClass('favorite');
+	$vmvLi.text("new text");
+
+	console.dir($vmvLi);
+}
+
+
+
+
