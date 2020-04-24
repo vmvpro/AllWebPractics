@@ -107,8 +107,25 @@ $(function () {
 
 	//f7();
 
-	f8();
+	//f8();
+
+	f9();
 });
+
+//СОБЫТИЯ БРАУЗЕРА
+function f9() {
+	$('li').on('click',
+		function () {
+
+			let id = this.id;
+
+			$(this).append('<span class="order">' + id + '</span>');
+		});
+
+	$('li').on('mouseout', function () {
+		$(this).children('span').remove();
+	});
+}
 
 //ПОЛУЧЕНИЕ И УСТАНОВКА ЗНАЧЕНИЙ АТРИБУТОВ
 function f8() {
