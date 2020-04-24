@@ -112,6 +112,8 @@ $(function () {
 	f9();
 });
 
+//ОБЪЕКТ EVENT
+
 //СОБЫТИЯ БРАУЗЕРА
 function f9() {
 	$('li').on('click',
