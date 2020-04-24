@@ -10,10 +10,43 @@
 
 //$('li[id="one"]').hide().delay(500);
 	//.fadeIn(1400).hide();
+//----------------------------------------------------
+//$(function () {
+//	let pTag = $('p');
+//	pTag.append('Список VMV обновлен!!!');
+	
+//	//console.dir($pTag);
+
+//	pTag.addClass('notice');
+	
+//	console.dir(pTag);
+
+//	$('ul').before(pTag);
+//	//$('ul').before('<p class="notice">Список обновлен!</p>');
+//	$('li.hot').prepend('+ ');
+//	var $newListItem = $('<li><em>кукуруза</em> без ГМО</li>');
+//	$('li:last').after($newListItem);
+//});
+
+//$(function () {
+//	var $listText = $('ul').text();
+//	$('ul').append('<p>' + $listText + '</p>');
+//});
+
+//--------------------------------------
+// События 
 
 $(function () {
-	$('ul').before('<p class="notice">Список обновлен!</p>');
-	$('li.hot').prepend('+ ');
-	var $newListItem = $('<li><em>кукуруза</em> без ГМО</li>');
-	$('li:last').after($newListItem);
+	var ids = '';
+	var $listItems = $('li');
+	$listItems.on('mouseover click', function () {
+		ids = this.id;
+		$listItems.children('span').remove();
+		$(this).append(' <span class="priority">' + ids + '</span>');
+	});
+	$listItems.on('mouseout', function () {
+		$(this).children('span').remove();
+	});
 });
+
+//--------------------------------------
