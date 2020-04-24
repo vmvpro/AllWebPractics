@@ -97,10 +97,45 @@
 //	.fadeIn(2000);
 
 $(function() {
-	f1();
-
+	//f1();
+	//f3();
+	f4();
 
 });
+
+
+function f4() {
+	let button = $('#newItemForm :input[type=button]');
+	console.log(button);
+}
+
+function f3() {
+	let ul = f2();
+
+	let txt = ul.html();
+	console.dir(txt);
+
+	
+
+}
+
+
+
+function f2() {
+	//Использование методов .html() и .text()
+	let ul = $('#page ul');
+	ul.prepend('<li>');
+
+	let li = ul[0].firstChild;
+	li.append('vmv');
+	
+	//li.text("vmv");
+	//console.dir(ul);
+	//console.dir(li);
+
+	return ul;
+	//ul.append('<li>');
+}
 
 function f1() {
 	$('#one').addClass('cool');
