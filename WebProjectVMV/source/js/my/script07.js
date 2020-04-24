@@ -51,17 +51,19 @@
 
 //--------------------------------------
 // ДЕЛЕГИРОВАНИЕ СОБЫТИЙ
-$(function () {
-	var listItem, itemStatus, eventType;
-	$('ul').on(
-		'click mouseover',
-		':not(#four)',
-		{ status: 'important', vmv:"hello-vmv" },
-		function (e) {
-			listItem = 'Элемент: ' + e.target.textContent + '<br />';
-			itemStatus = 'Состояние: ' + e.data.vmv + '<br />';
-			eventType = 'Событие: ' + e.type;
-			$('#notes').html(listItem + itemStatus + eventType);
-		}
-	);
-});
+//$(function () {
+//	var listItem, itemStatus, eventType;
+//	$('ul').on(
+//		'click mouseover',
+//		':not(#four)',
+//		{ status: 'important', vmv:"hello-vmv" },
+//		function (e) {
+//			listItem = 'Элемент: ' + e.target.textContent + '<br />';
+//			itemStatus = 'Состояние: ' + e.data.vmv + '<br />';
+//			eventType = 'Событие: ' + e.type;
+//			$('#notes').html(listItem + itemStatus + eventType);
+//		}
+//	);
+//});
+
+//Визуальные эффекты Jquery
