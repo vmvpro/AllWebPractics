@@ -36,18 +36,18 @@
 //--------------------------------------
 // События 
 
-$(function () {
-	var ids = '';
-	var $listItems = $('li');
-	$listItems.on('mouseover click', function () {
-		ids = this.id;
-		$listItems.children('span').remove();
-		$(this).append(' <span class="priority">' + ids + '</span>');
-	});
-	$listItems.on('mouseout', function () {
-		$(this).children('span').remove();
-	});
-});
+//$(function () {
+//	var ids = '';
+//	var $listItems = $('li');
+//	$listItems.on('mouseover click', function () {
+//		ids = this.id;
+//		$listItems.children('span').remove();
+//		$(this).append(' <span class="priority">' + ids + '</span>');
+//	});
+//	$listItems.on('mouseout', function () {
+//		$(this).children('span').remove();
+//	});
+//});
 
 //--------------------------------------
 // ДЕЛЕГИРОВАНИЕ СОБЫТИЙ
@@ -56,10 +56,10 @@ $(function () {
 	$('ul').on(
 		'click mouseover',
 		':not(#four)',
-		{ status: 'important' },
+		{ status: 'important', vmv:"hello-vmv" },
 		function (e) {
 			listItem = 'Элемент: ' + e.target.textContent + '<br />';
-			itemStatus = 'Состояние: ' + e.data.status + '<br />';
+			itemStatus = 'Состояние: ' + e.data.vmv + '<br />';
 			eventType = 'Событие: ' + e.type;
 			$('#notes').html(listItem + itemStatus + eventType);
 		}
