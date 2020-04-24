@@ -105,8 +105,24 @@ $(function () {
 
 	//f6();
 
-	f7();
+	//f7();
+
+	f8();
 });
+
+//ПОЛУЧЕНИЕ И УСТАНОВКА ЗНАЧЕНИЙ АТРИБУТОВ
+function f8() {
+
+	$('li:nth-child(3)').removeAttr('class');
+
+	$('li:nth-child(3)').removeClass('hot');
+
+	$('ul').attr('id', 'group');
+
+	$('#one').attr('class', 'cool');
+
+
+}
 
 //Добавление элементов
 function f7() {
