@@ -111,8 +111,23 @@ $(function () {
 
 	//f9();
 
-	f10();
+	//f10();
+
+	f11();
 });
+
+// Применение фильтров
+function f11() {
+	let $listItems = $('li');
+	//$listItems.filter('.hot:last').removeClass('hot');
+	let $currentItem = $listItems.filter('.hot:nth-child(2)');
+	$currentItem.removeClass('hot');
+
+	let $ul = $('#page ul');
+	$ul.find('em').css('color','blue');
+
+	console.dir($ul.find('em'));
+}
 
 //ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ ДЛЯ ОБРАБОТЧИКОВ СОБЫТИЙ
 //ОБХОД ДЕРЕВА DOM НА ПРАКТИКЕ
@@ -123,7 +138,7 @@ function f10() {
 
 	$('h2 a').css('cursor:pointer;');
 
-	$('h2 a').on('click', function() {
+	$('h2 a').on('click', function () {
 		$('ul').show();
 	});
 
@@ -194,7 +209,7 @@ function f5() {
 
 	//console.dir($ul);
 	//console.dir($li01);
-	
+
 	//$('li#one').remove();
 }
 
