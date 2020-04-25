@@ -1,3 +1,7 @@
 ﻿$(function() {
-	$('#glava').text('AJAX');
+	
 });
+
+function start() {
+	$('#glava').text('AJAX');
+}

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Glava21_Views": {
+    "WebProjectCore": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
