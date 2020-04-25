@@ -117,8 +117,23 @@ $(function () {
 
 	//f12();
 
-	f13();
+	//f13();
+
+	f14();
 });
+
+//ВЫРЕЗАНИЕ И КОПИРОВАНИЕ ЭЛЕМЕНТОВ
+function f14() {
+	var $moveItem = $('#one').detach();
+	var $moveItem2 = $('#two');
+
+	//$moveItem2.text(function () { this.innerText + " Two"; });
+	$moveItem2.after($moveItem);
+
+	//$moveItem.appendTo('ul');
+
+
+}
 
 //ВЫБОР ЭЛЕМЕНТОВ ФОРМЫ
 //МЕТОДЫ И СОБЫТИЯ, СВЯЗАННЫЕ С ФОРМАМИ
@@ -128,6 +143,15 @@ function f13() {
 	let $newItemForm = $('#newItemForm');
 
 	let $ul = $('#page ul');
+
+	let $newItemButton = $('#newItemButton');
+	$newItemForm.hide();
+	$newItemButton.show();
+
+	$newItemButton.on('click', function () {
+		$newItemForm.show();
+		$newItemButton.hide();
+	});
 
 	$newItemForm.on('submit', function (e) {
 		if ($description.val().length === 0) {
@@ -153,8 +177,11 @@ function f13() {
 								
 			});
 
-			if (!isText) 
+			if (!isText) {
 				$ul.append('<li>' + $description.val() + '</li>');
+				$newItemForm.hide();
+				$newItemButton.show();
+			}
 			
 
 			e.preventDefault();
