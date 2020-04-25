@@ -76,6 +76,9 @@
     <Content Include="indexWork.html" />
     <Content Include="source\css\animation\style.min.css" />
     <Content Include="source\css\book\style.min.css" />
+    <Content Include="source\data\data-jsonp.js" />
+    <Content Include="source\data\data.html" />
+    <Content Include="source\data\data.xml" />
     <Content Include="source\img\2xkinglogo.png" />
     <Content Include="source\img\hint.png" />
     <Content Include="source\img\icon-calendar.png" />
@@ -91,6 +94,16 @@
     <Content Include="source\jquery\jquery.min.js" />
     <Content Include="source\jquery\jquery.slim.js" />
     <Content Include="source\jquery\jquery.slim.min.js" />
+    <Content Include="source\js\book\data-html.js" />
+    <Content Include="source\js\book\data-json.js" />
+    <Content Include="source\js\book\data-jsonp.js" />
+    <Content Include="source\js\book\data-xml.js" />
+    <Content Include="source\js\book\example.js" />
+    <Content Include="source\js\book\jq-ajax.js" />
+    <Content Include="source\js\book\jq-get.js" />
+    <Content Include="source\js\book\jq-getJSON.js" />
+    <Content Include="source\js\book\jq-load.js" />
+    <Content Include="source\js\book\jq-post.js" />
     <Content Include="source\js\book\list.js" />
     <Content Include="source\js\my\animationCss.js" />
     <Content Include="source\js\my\script08_Ajax.js" />
@@ -114,6 +127,9 @@
     <Content Include="source\scss\animation\webDesigner.scss" />
     <Content Include="source\scss\book\c06.scss" />
     <Content Include="source\scss\book\c07.scss" />
+    <Content Include="source\data\data.json" />
+    <Content Include="source\data\example.json" />
+    <Content Include="source\data\rates.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
