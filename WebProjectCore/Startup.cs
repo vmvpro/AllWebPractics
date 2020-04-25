@@ -15,7 +15,7 @@ namespace WebProjectCore
 
 			
 			services.AddMvc();
-			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			//services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 		}
 
@@ -27,7 +27,7 @@ namespace WebProjectCore
 			app.UseDeveloperExceptionPage();
 			app.UseStatusCodePages();
 			//----------------------------------
-			app.UseMiddleware<NoCacheMiddleware>();
+			//app.UseMiddleware<NoCacheMiddleware>();
 			//----------------------------------
 			app.UseStaticFiles();
 			app.UseBrowserLink();

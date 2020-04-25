@@ -13,10 +13,10 @@ namespace WebProjectCore.Controllers
 	{
 		private readonly IHttpContextAccessor _httpContextAccessor;
 
-		public HomeController(IHttpContextAccessor httpContextAccessor)
-		{
-			_httpContextAccessor = httpContextAccessor;
-		}
+		//public HomeController(IHttpContextAccessor httpContextAccessor)
+		//{
+		//	_httpContextAccessor = httpContextAccessor;
+		//}
 
 		public ViewResult Index()
 		{
