@@ -115,10 +115,62 @@ $(function () {
 
 	//f11();
 
-	f12();
+	//f12();
+
+	f13();
 });
 
 //ВЫБОР ЭЛЕМЕНТОВ ФОРМЫ
+//МЕТОДЫ И СОБЫТИЯ, СВЯЗАННЫЕ С ФОРМАМИ
+function f13() {
+	let $description = $('#itemDescription');
+
+	let $newItemForm = $('#newItemForm');
+
+	let $ul = $('#page ul');
+
+	$newItemForm.on('submit', function (e) {
+		if ($description.val().length === 0) {
+			console.log("Поле не заполнено!!!");
+			e.preventDefault();
+		} else {
+
+			let isText = false;
+
+			let $li = $ul.find('li');
+			
+			$li.each(function (index, value) {
+				let text = this.innerText;
+
+				console.log('text: ' + text);
+				console.log('description: ' + $description.val());
+
+				if ($description.val() === text) {
+					console.log('такой текст уже существует!!!');
+					isText = true;
+					console.log('isText:' + isText);
+				} 
+								
+			});
+
+			if (!isText) 
+				$ul.append('<li>' + $description.val() + '</li>');
+			
+
+			e.preventDefault();
+
+		}
+	});
+
+	//$addButton.on('click',
+	//	function() {
+	//		if ($description.val().length === 0) {
+	//			console.log("Поле не заполнено!!!");
+	//			//this.preventDefault();
+	//			this.stopPropagation();
+	//		}
+	//	});
+}
 
 //ПОИСК ЭЛЕМЕНТОВ ПО ИХ ПОРЯДКОВОМУ НОМЕРУ
 function f12() {
