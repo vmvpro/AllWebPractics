@@ -119,9 +119,22 @@ $(function () {
 
 	//f13();
 
-	f14();
+	//f14();
+
+	f15();
 });
 
+//РАЗМЕРЫ КОНТЕЙНЕРА
+function f15() {
+
+	var $page = $('#page');
+	$page.width('100%');
+	var listHeight = $page.height();
+	$('ul').append('<p>Высота: ' + listHeight + 'px</p>');
+	$('li').width('100%');
+	$('li#one').width(100);
+	$('li#two').width('50%');
+}
 //ВЫРЕЗАНИЕ И КОПИРОВАНИЕ ЭЛЕМЕНТОВ
 function f14() {
 	var $moveItem = $('#one').detach();
