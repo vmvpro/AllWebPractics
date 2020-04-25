@@ -1,0 +1,3 @@
+﻿$(function() {
+	$('#glava').text('AJAX');
+});

@@ -2,21 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
-	
-	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+	<link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+
+	@RenderSection("Head")
 
 </head>
 <body>
-	<div>
-		<p>Подключение шаблона</p>
-		<a class="btn btn-primary" href="#">content</a>
-		@RenderBody()
-	</div>
 	
-	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<h1 id="glava"></h1>
+	
+
+	@RenderBody()
+
+	@*<script src="lib/bootstrap/dist/js/bootstrap.js"></script>*@
 	<script src="lib/jquery/jquery.js"></script>
+
+	@RenderSection("Scripts")
 
 </body>
 </html>

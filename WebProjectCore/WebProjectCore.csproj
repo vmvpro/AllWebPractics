@@ -20,6 +20,7 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\data\" />
     <Folder Include="wwwroot\js\book\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>
