@@ -24,7 +24,7 @@ var rimraf = require("rimraf");
 // Переменные
 
 var folder = "book";
-var number = "07";
+var number = "08";
 //var folder = "animation";
 
 
