@@ -1,19 +1,18 @@
 ﻿$(function () {
 	console.log('my scripts');
-	start();
+	send();
 });
 
-function start() {
+function send() {
 	//$('#glava').text('AJAX');
 
-	let $btn = $('#sendXML');
+	let $btn = $('#send');
 	//btn.text('click me');
 	//console.dir(btn);
 
-	$btn.on('click', function() {
-		//console.log('click vmv');
-		dataXML();
-
-
+	//$btn.on('click', dataXML());
+	$btn.on('click', function () {
+		dataJSON();
 	});
+
 }
