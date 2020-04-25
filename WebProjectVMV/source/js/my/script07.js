@@ -121,8 +121,36 @@ $(function () {
 
 	//f14();
 
-	f15();
+	//f15();
+
+	f16();
 });
+
+function f16() {
+
+	let items = ['item1', 'item2', 'item3', 'item4'];
+
+	let $ul = $('#page ul');
+
+	for (var i = 0; i < 5; i++) 
+		for (var item of items) 
+			$ul.append('<li>' + item + '</li>');
+	
+	for (var item of items) {
+		console.log(item);
+	}
+
+	var $window = $(window);
+	var $slide_vmv = $('#slide_vmv');
+	var endZone = $('#footer').offset().top - $window.height() - 500;
+	$window.on('scroll', function () {
+		if ((endZone) < $window.scrollTop()) {
+			$slide_vmv.animate({ 'right': '0px' }, 250);
+		} else {
+			$slide_vmv.stop(true).animate({ 'right': '-360px' }, 250);
+		}
+	});
+}
 
 //РАЗМЕРЫ КОНТЕЙНЕРА
 function f15() {
@@ -175,7 +203,7 @@ function f13() {
 			let isText = false;
 
 			let $li = $ul.find('li');
-			
+
 			$li.each(function (index, value) {
 				let text = this.innerText;
 
@@ -186,8 +214,8 @@ function f13() {
 					console.log('такой текст уже существует!!!');
 					isText = true;
 					console.log('isText:' + isText);
-				} 
-								
+				}
+
 			});
 
 			if (!isText) {
@@ -195,7 +223,7 @@ function f13() {
 				$newItemForm.hide();
 				$newItemButton.show();
 			}
-			
+
 
 			e.preventDefault();
 
@@ -230,7 +258,7 @@ function f11() {
 	$currentItem.removeClass('hot');
 
 	let $ul = $('#page ul');
-	$ul.find('em').css('color','blue');
+	$ul.find('em').css('color', 'blue');
 
 	console.dir($ul.find('em'));
 }
