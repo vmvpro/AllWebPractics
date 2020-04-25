@@ -1,10 +1,10 @@
-﻿{
+{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:9871",
-      "sslPort": 44315
+      "applicationUrl": "http://localhost:24255",
+      "sslPort": 44370
     }
   },
   "profiles": {
@@ -15,13 +15,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebProjectCore": {
+    "Glava21_Views": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:7001;http://localhost:7000"
     }
   }
 }

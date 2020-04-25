@@ -3,11 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" />
@@ -16,9 +18,8 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\scss\" />
-    <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\data\" />
+    <Folder Include="wwwroot\js\book\" />
   </ItemGroup>
 
 </Project>
