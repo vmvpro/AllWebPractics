@@ -9,14 +9,12 @@
 @section Body{
 
 	<nav>
-		<a asp-action="PartialView">Часть 1</a>
-		<a href="#">Часть 2</a>
+		<a href="#">Часть 1</a>
+		<a href="#">Часть 2</a>*
 		<a href="#">Часть 3</a>
 	</nav>
 
-	<section id="content">
-		@Html.RenderPartial("PartialView")
-	</section>
+	@*<section id="content">@await Component.InvokeAsync("JqLoadHtml")</section>*@
 }
 
 

@@ -32,7 +32,10 @@ namespace WebProjectCore.Controllers
 
 		public ViewResult PartialView()
 		{
+
+			//return ViewComponent("PriorityList", new { maxPriority = 3, isDone = false });
 			ViewBag.Title = "PartialView";
+			return View("PartialView");
 			return View("PartialPart1");
 		}
 

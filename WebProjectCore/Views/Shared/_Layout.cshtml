@@ -10,7 +10,10 @@
 
 	@*<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />*@
 
-	@RenderSection("Head")
+	@if (IsSectionDefined("Head"))
+	{
+		@RenderSection("Head")
+	}
 
 </head>
 <body>
@@ -30,14 +33,19 @@
 		</div>
 
 	</div>
-
-	@RenderSection("Body")
+	@if (IsSectionDefined("Body"))
+	{
+		@RenderSection("Body")
+	}
 
 	@*<script src="lib/bootstrap/dist/js/bootstrap.js"></script>*@
 	<script src="~/lib/jquery/jquery.js"></script>
 	<script src="~/js/my/scripts.js"></script>
 
-	@RenderSection("Scripts")
+	@if (IsSectionDefined("Scripts"))
+	{
+		@RenderSection("Scripts")
+	}
 
 </body>
 </html>
