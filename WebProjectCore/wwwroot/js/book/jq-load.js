@@ -3,13 +3,17 @@
 //       Origin 'null' is therefore not allowed access.
 // Вы можете запустить данный сценарий на собственном сервере.
 
-$('nav a').on('click', function(e) {                 // Пользователь щелкает по ссылке nav
-  e.preventDefault();                                // Останавливаем загрузку новой сcылки
-  var url = this.href;                               // Получаем значение href
+$('nav a').on('click', function (e) {
 
-  $('nav a.current').removeClass('current');         // Удаляем текущий индикатор
-  $(this).addClass('current');                       // Новый текущий индикатор
+	console.log('nav a');
+	
+	// Пользователь щелкает по ссылке nav
+	e.preventDefault();                                // Останавливаем загрузку новой сcылки
+	var url = this.href;                               // Получаем значение href
 
-  $('#container').remove();                          // Удаляем старое содержимое
-  $('#content').load(url + ' #container').hide().fadeIn('slow'); // Новое содержимое
+	$('nav a.current').removeClass('current');         // Удаляем текущий индикатор
+	$(this).addClass('current');                       // Новый текущий индикатор
+
+	$('#container').remove();                          // Удаляем старое содержимое
+	$('#content').load(url + ' #container').hide().fadeIn('slow'); // Новое содержимое
 });
