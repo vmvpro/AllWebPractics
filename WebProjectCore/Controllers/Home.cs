@@ -30,5 +30,15 @@ namespace WebProjectCore.Controllers
 			return View();
 		}
 
+		public ViewResult PartialView()
+		{
+			ViewBag.Title = "PartialView";
+			return View("PartialPart1");
+		}
+
+		
+
+
+
 	}
 }

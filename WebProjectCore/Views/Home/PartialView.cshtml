@@ -1,0 +1,29 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@section Head{
+	<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Body{
+
+	<nav>
+		<a asp-action="PartialView">Часть 1</a>
+		<a href="#">Часть 2</a>
+		<a href="#">Часть 3</a>
+	</nav>
+
+	<section id="content">
+		@Html.RenderPartial("PartialView")
+	</section>
+}
+
+
+@section Scripts {
+
+	@*<script src="js/book/data-xml.js"></script>*@
+	<script src="~/js/book/data-json.js"></script>
+	<script src="~/js/book/jq-load.js"></script>
+
+}
