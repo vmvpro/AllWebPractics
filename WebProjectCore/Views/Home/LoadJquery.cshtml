@@ -1,0 +1,29 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@section Head{
+	<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Body{
+	
+	<nav>
+		<a href="jq-load.html" class="current">ГЛАВНАЯ</a>
+		<a href="jq-load2.html">СОБЫТИЯ</a>
+		<a href="jq-load3.html">ИГРУШКИ</a>
+	</nav>
+	<section id="content">
+		<div id="container">
+			<!-- !—Здесь размещается контент страницы -->
+		</div>
+	</section>
+}
+
+
+	@section Scripts {
+
+		@*<script src="js/book/data-xml.js"></script>*@
+		<script src="~/js/book/data-json.js"></script>
+
+	}

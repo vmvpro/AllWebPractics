@@ -5,17 +5,36 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
 
-	<link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+	<link rel="stylesheet" asp-href-include="~/lib/bootstrap/dist/css/*.min.css" />
+	<link href="~/scss/myStyle.min.css" rel="stylesheet" type="text/css" />
+
+	@*<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />*@
 
 	@RenderSection("Head")
 
 </head>
 <body>
-	
-	@RenderBody()
+
+
+	<div class="header-vmv">
+		<div class="logo-vmv">
+			<img src="/img/vmv_.png" />
+		</div>
+		<div class="menu-vmv">
+			<div class="h1-vmv">МОЗГОВОЙ ШТУРМ</div>
+			<div class="nav-vmv">
+				<a asp-controller="Home" asp-action="Index">Index</a>
+				<a asp-controller="Home" asp-action="LoadJquery">Jquery</a>
+			</div>
+		</div>
+
+	</div>
+
+	@RenderSection("Body")
 
 	@*<script src="lib/bootstrap/dist/js/bootstrap.js"></script>*@
-	<script src="lib/jquery/jquery.js"></script>
+	<script src="~/lib/jquery/jquery.js"></script>
+	<script src="~/js/my/scripts.js"></script>
 
 	@RenderSection("Scripts")
 

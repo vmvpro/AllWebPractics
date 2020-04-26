@@ -8,46 +8,27 @@ body {
 	color: #666;
 	font-family: 'Open Sans', arial, sans-serif;
 	width: 960px;
-	margin: 30px auto 0 auto;
+	//margin: 0 auto 0 auto;
 }
 
 header {
-	display: flex;
+	display: block;
 	height: 140px;
 	border-bottom: 5px solid #000;
 	//margin-bottom: 30px;
-	//border: 2px solid red;
-	justify-content: space-around;
-	align-items:center;
-}
-
-.logo {
-	display: block;
-	//margin-bottom: 10px;
-	width: 200px;
-	//border: 2px solid red;
-	flex-grow: 1;
-}
-.logo img{
-	width:100%;
 }
 
 h1 {
-	//align-content:center;
-	//border: 2px solid red;
-	//margin-left: 10px;
-	text-align:center;
 	font-weight: normal;
 	//margin: 28px 0 0 0;
-	//float: left;
+	float: left;
 	width: 225px;
-	//height: 90px;
-	flex-grow: 9;
-	//background-image: url('../../img/vmv_png.png');
-	//background-repeat: no-repeat;
-	//text-indent: 100%;
-	//white-space: nowrap;
-	//overflow: no-content;
+	height: 90px;
+	background-image: url('../img/maker-logo.png');
+	background-repeat: no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 h2 {
@@ -195,15 +176,15 @@ input[type=submit]:hover {
 }
 
 .CN {
-	background-image: url('../../img/cn.png');
+	background-image: url('../img/cn.png');
 }
 
 .RU {
-	background-image: url('../../img/ru.png');
+	background-image: url('../img/ru.png');
 }
 
 .TR {
-	background-image: url('../../img/tr.png');
+	background-image: url('../img/tr.png');
 }
 
 
@@ -266,7 +247,7 @@ input[type=submit]:hover {
 
 #details div {
 	text-align: left;
-	padding: 1.8em 0 0em 0;
+	padding: 1.8em 0 0 0;
 }
 
 #details p {

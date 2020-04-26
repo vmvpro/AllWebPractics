@@ -20,6 +20,13 @@ namespace WebProjectCore.Controllers
 
 		public ViewResult Index()
 		{
+			ViewBag.Title = "Index";
+			return View();
+		}
+
+		public ViewResult LoadJquery()
+		{
+			ViewBag.Title = "Jquery";
 			return View();
 		}
 

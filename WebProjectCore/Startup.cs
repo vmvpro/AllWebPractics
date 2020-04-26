@@ -12,7 +12,6 @@ namespace WebProjectCore
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-
 			
 			services.AddMvc();
 			//services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -27,11 +26,21 @@ namespace WebProjectCore
 			app.UseDeveloperExceptionPage();
 			app.UseStatusCodePages();
 			//----------------------------------
-			//app.UseMiddleware<NoCacheMiddleware>();
+			app.UseMiddleware<NoCacheMiddleware>();
 			//----------------------------------
 			app.UseStaticFiles();
 			app.UseBrowserLink();
-			app.UseMvcWithDefaultRoute();
+
+			app.UseMvc(routes =>
+			{
+				routes.MapRoute(
+					name: "defaults",
+					template: "{controller}/{action}",
+					defaults: new { controller = "Home", action = "Index"}
+				);
+			});
+
+			//app.UseMvcWithDefaultRoute();
 		}
 	}
 }
