@@ -29,14 +29,18 @@
 				<a asp-controller="Home" asp-action="Index">Index</a>
 				<a asp-controller="Home" asp-action="LoadJquery">Jquery</a>
 				<a asp-controller="Home" asp-action="PartialView">PartialView</a>
+				<a asp-controller="Home" asp-action="GetAjax">GetAjax</a>
 			</div>
 		</div>
 
 	</div>
-	@if (IsSectionDefined("Body"))
-	{
-		@RenderSection("Body")
-	}
+
+	<div class="body-vmv">
+		@if (IsSectionDefined("Body"))
+		{
+			@RenderSection("Body")
+		}
+	</div>
 
 	@*<script src="lib/bootstrap/dist/js/bootstrap.js"></script>*@
 	<script src="~/lib/jquery/jquery.js"></script>

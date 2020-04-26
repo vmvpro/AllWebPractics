@@ -40,6 +40,40 @@ namespace WebProjectCore.Controllers
 		}
 
 		
+		public ViewResult GetAjax()
+		{
+			ViewBag.Title = "GetAjax";
+			return View();
+		}
+
+		[HttpGet]
+		public IActionResult GetAjaxResult(string result)
+		{
+			
+			return View();
+		}
+
+		[HttpGet]
+		public JsonResult OnGetList()
+		{
+			List<string> lstString = new List<string>
+			{
+				"Val 1",
+				"Val 2",
+				"Val 3"
+			};
+			return new JsonResult(lstString);
+		}
+
+		[HttpGet]
+		public string OnGetAjax()
+		{	
+			return "Hello VMV from the server!!!";
+		}
+
+
+
+
 
 
 

@@ -1,0 +1,45 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@section Head{
+	<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Body{
+	
+	<div id="content">
+
+	</div>
+
+	<div class="third">
+		<a href="vote.php?vote=gray">
+			<img src="../../img/vmv-gray.png" id="gray" alt="gray" />
+		</a>
+		<span>номер 1</span>
+	</div>
+
+	<div class="third">
+		<a href="vote.php?vote=yellow">
+			<img src="../../img/vmv-yellow.png" id="yellow" alt="желтая" />
+		</a>
+		<span>номер 2</span>
+	</div>
+
+	<div class="third">
+		<a href="vote.php?vote=green">
+			<img src="../../img/vmv-green.png" id="green" alt="зеленая" />
+		</a>
+		<span>номер 3</span>
+	</div>
+
+	<button id="getAjax" class="btn btn-primary">getAjax</button>
+}
+
+
+@section Scripts {
+
+	@*<script src="js/book/data-xml.js"></script>*@
+	<script src="~/js/book/jq-get.js"></script>
+
+}
