@@ -111,8 +111,8 @@ p#selector {
 }
 
 form {
-	margin: 0 0 0 90px;
-	width: 300px;
+	//margin: 0 0 0 90px;
+	//width: 300px;
 }
 
 label, input {
@@ -136,7 +136,7 @@ input {
 	padding: 6px 10px 6px 10px;
 }
 
-input[type=submit] {
+/*input[type=submit] {
 	background-color: #1fb684;
 	color: #fff;
 	font-weight: bold;
@@ -151,7 +151,7 @@ input[type=submit] {
 input[type=submit]:hover {
 	background-color: #000;
 	cursor: pointer;
-}
+}*/
 
 
 /* Exchange rates */
@@ -174,7 +174,7 @@ input[type=submit]:hover {
 }
 
 .CN {
-	background-image: url('../img/cn.png');
+	background-image: url('../../img/cn.png');
 }
 
 .RU {

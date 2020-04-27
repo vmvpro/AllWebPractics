@@ -48,6 +48,7 @@ namespace WebProjectCore.Controllers
 			return View();
 		}
 
+		
 		public ViewResult PostAjax()
 		{
 			ViewBag.Title = "PostAjax";

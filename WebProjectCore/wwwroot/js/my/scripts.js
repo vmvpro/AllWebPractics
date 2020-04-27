@@ -1,5 +1,5 @@
 ﻿$(function () {
-	console.log('my scripts.js');
+	console.log('my file: scripts.js');
 	//send();
 	load();
 });
@@ -20,10 +20,10 @@ function send() {
 
 function load() {
 
-	console.dir(document);
+	//console.dir(document);
 
 	let title = document.title.toUpperCase(); //$('head')['title'];
-	console.log('title: ' + title);
+	//console.log('title: ' + title);
 
 	//$('.nav-vmv a').css('color', 'red');
 

@@ -1,5 +1,5 @@
 ﻿$(function () {
-	console.log('my scripts.js');
+	console.log('my file: getServerInfo.js');
 	//send();
 	//load();
 });

@@ -1,0 +1,39 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@section Head{
+	<link href="~/scss/book/c08.min.css" rel="stylesheet" type="text/css" />
+}
+
+@section Body{
+	
+	<h2>Регистрация</h2>
+
+	<div class="register-box">
+		
+		
+
+		<div class="register-image"></div>
+
+		<form class="register-form" action="register.php" method="post">
+
+
+
+			<label for="name">Логин</label><input type="text" id="name" name="name" />
+			<label for="pwd">Пароль</label><input type="password" id="pwd" name="pwd" />
+			<label for="email">E-mail</label><input type="email" id="email" name="email" />
+			<div Style="clear: both;"></div>
+			<input class="submit-form" type="submit" value="Join" />
+		</form>
+	</div>
+}
+
+
+@section Scripts {
+
+	@*<script src="js/book/data-xml.js"></script>*@
+	@*<script src="~/js/book/jq-get.js"></script>*@
+	<script src="~/js/my/postServerInfo.js"></script>
+
+}
