@@ -45,9 +45,6 @@ $('nav a').on('click', function (e) {
 
 	let $content = $('#content');
 	$content.empty();
-	//$content.remove();
-
-	console.log('text: ' + text);
 
 	switch (text) {
 		case 'CHAPTER 1':
@@ -66,33 +63,20 @@ $('nav a').on('click', function (e) {
 			$('<p>').append('Not Content').appendTo($content);
 	}
 
-	//if (text === 'GETHTML') {
-	//	AjaxFunction(id);
-	//	elseif(text === 'GETHTML') {
-	//	}
-	//	//$content.append("<p>VMV Content</p>");
-	//	//$('<p>').append('VMV Content 2').appendTo($content);
-
-	//	//return;
-
-	//}
 });
 
 function AjaxGetJson(id) {
 	$.ajax({
 		type: "GET",
-		//url: "/Home?handler=Ajax",
 		url: "/Home/GetJson?id=" + id,
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		success: function (response) {
 
-			//let _responseText = response;
-			//let $content = $('#content');
-			//$('<p>').append(_responseText + ' myfile.js').appendTo($content);
-			//$content.append(response).hide().fadeIn('slow');
 			let responseObject = JSON.parse(response);
-			// ФОРМИРУЕМ СТРОКУ С НОВЫМ КОНТЕНТОМ (можно было бы также использовать работу с деревом DOM)
+
+			// ФОРМИРУЕМ СТРОКУ С НОВЫМ КОНТЕНТОМ 
+			// (можно было бы также использовать работу с деревом DOM)
 			var newContent = '';
 			for (var i = 0; i < responseObject.events.length; i++) { // Перебираем объекты
 				newContent += '<div class="event">';
@@ -113,30 +97,73 @@ function AjaxGetJson(id) {
 	});
 }
 
-function AjaxGetHtml(id) {
-	$.ajax({
-		type: "GET",
-		//url: "/Home?handler=Ajax",
-		url: "/Home/GetHtml?id=" + id,
-		contentType: "text/html; charset=utf-8",
-		dataType: "html",
-		success: function (response) {
+//// Ajax-запрос
+//function AjaxGetHtml(id) {
+//	$.ajax({
+//		type: "GET",
 
-			//let _responseText = response;
-			let $content = $('#content');
-			//$('<p>').append(_responseText + ' myfile.js').appendTo($content);
-			$content.append(response).hide().fadeIn('slow');
+//		// С использованием параметра
+//		url: "/Home/GetHtml?id=" + id,
 
-			//$content.load(response).hide().fadeIn('slow'); // Новое содержимое
-			//var dvItems = $("#dvItems");
-			//dvItems.empty();
-			//$.each(response,
-			//	function (i, item) {
-			//		var $tr = $('<li>').append(item).appendTo(dvItems);
-			//	});
-		},
-		failure: function (response) {
-			alert(response);
-		}
-	});
-}
+//		// Определяем контент
+//		contentType: "text/html; charset=utf-8",
+
+//		// Определяем тип данных
+//		dataType: "html",
+//		success: function (response) {
+
+//			$('#content').append(response).hide().fadeIn('slow');
+
+//		},
+//		// В случае ошибки
+//		failure: function (response) {
+//			alert(response);
+//		}
+//	});
+//}
+
+//// Подписка на событие
+//$('nav .a_').on('click_', function (e) {
+
+//	// Пользователь щелкает по ссылке nav
+
+//	// Останавливаем загрузку новой сcылки
+//	e.preventDefault();
+
+//	// Удаляем текущий индикатор
+//	$('nav a.current').removeClass('current');
+
+//	// Новый текущий индикатор
+//	$(this).addClass('current');
+
+//	// Удаляем старое содержимое
+//	$('#container').remove();
+
+//	// Получение наименование ссылки
+//	let text = e.target.innerText;
+
+//	// Обнуляем содежимое контента куда 
+//	// будем присоединять
+//	let $content = $('#content');
+//	$content.empty();
+
+//	// Взависимости от нажатия на ссылку 
+//	// Вызываем соответствующийся код
+//	switch (text) {
+//		case 'CHAPTER 1':
+//			AjaxGetHtml(1);
+//			break;
+//		case 'CHAPTER 2':
+//			AjaxGetHtml(2);
+//			break;
+//		case 'CHAPTER 3':
+//			AjaxGetHtml(3);
+//			break;
+//		case 'CHAPTER 4':
+//			AjaxGetJson(1);
+//			break;
+//		default:
+//			$('<p>').append('Not Content').appendTo($content);
+//	}
+
+//});

@@ -48,6 +48,14 @@ namespace WebProjectCore.Controllers
 			return View();
 		}
 
+		public ViewResult PostAjax()
+		{
+			ViewBag.Title = "PostAjax";
+			return View();
+		}
+
+		
+
 		[HttpGet]
 		public IActionResult GetAjaxResult(string result)
 		{
@@ -92,7 +100,8 @@ namespace WebProjectCore.Controllers
 		[HttpGet]
 		public ActionResult<string> GetHtml(string id)
 		{
-			//return "<p>VMV HTML Produces</p>";
+
+			// Использование среды разработки
 			char separator = Path.DirectorySeparatorChar;
 			string webRoot = _env.WebRootPath;
 
@@ -101,9 +110,9 @@ namespace WebProjectCore.Controllers
 
 			return fileContent;
 
-			// Использование среды разработки
-			//var webRoot = _env.WebRootPath;
-			//var fileContent = System.IO.File.ReadAllText(webRoot + "/templates/subscribe.html");
+			// Тест
+			//return "<p>VMV HTML Produces</p>";
+
 		}
 
 		[HttpGet]
@@ -117,11 +126,7 @@ namespace WebProjectCore.Controllers
 			string fileContent = System.IO.File.ReadAllText(filePath);
 
 			return new JsonResult(fileContent);
-			//return fileContent;
-
-			// Использование среды разработки
-			//var webRoot = _env.WebRootPath;
-			//var fileContent = System.IO.File.ReadAllText(webRoot + "/templates/subscribe.html");
+			
 		}
 
 		//[HttpGet]
