@@ -55,7 +55,13 @@ namespace WebProjectCore.Controllers
 			return View();
 		}
 
-		
+		[HttpPost]
+		public string PostAjaxFofm()
+		{	
+			return "Успешно!!!";
+		}
+
+
 
 		[HttpGet]
 		public IActionResult GetAjaxResult(string result)
