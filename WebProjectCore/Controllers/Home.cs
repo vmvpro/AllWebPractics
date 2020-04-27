@@ -2,6 +2,8 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using WebProjectCore.Models;
 
 namespace WebProjectCore.Controllers
 {
@@ -56,11 +58,44 @@ namespace WebProjectCore.Controllers
 		}
 
 		[HttpPost]
-		public string PostAjaxFofm()
-		{	
-			return "Успешно!!!";
-		}
+		public JsonResult PostAjaxForm()
+		{
+			string success = "Успешно!!!";
 
+			return new JsonResult(success);
+
+			string sPostValue1 = "";
+			string sPostValue2 = "";
+			string sPostValue3 = "";
+			{
+				MemoryStream stream = new MemoryStream();
+				Request.Body.CopyTo(stream);
+				stream.Position = 0;
+				using (StreamReader reader = new StreamReader(stream))
+				{
+					string requestBody = reader.ReadToEnd();
+					if (requestBody.Length > 0)
+					{
+						var user = JsonConvert.DeserializeObject<User>(requestBody);
+						if (user != null)
+						{
+							sPostValue1 = user.Name;
+							sPostValue2 = user.Password;
+							sPostValue3 = user.Email;
+						}
+					}
+				}
+			}
+
+			//List<string> lstString = new List<string>
+			//{
+			//	sPostValue1,
+			//	sPostValue2,
+			//	sPostValue3
+			//};
+
+			//return new JsonResult(lstString);
+		}
 
 
 		[HttpGet]

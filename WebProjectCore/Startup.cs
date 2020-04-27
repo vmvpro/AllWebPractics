@@ -13,7 +13,10 @@ namespace WebProjectCore
 		public void ConfigureServices(IServiceCollection services)
 		{
 			
+
 			services.AddMvc();
+			//.AddDefaultTokenProviders();
+			services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
 			//services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 		}
