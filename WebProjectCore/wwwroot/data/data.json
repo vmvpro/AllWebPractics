@@ -1,19 +1,19 @@
 {
   "events": [
     {
-      "location": "Москва, Россия",
+      "location": "Киев, Украина",
       "date": "1 июля",
-      "map": "img/map-ca.png"
+      "map": "/img/map-ca.png"
     },
     {
       "location": "Пекин, Китай",
       "date": "15 июля",
-      "map": "img/map-tx.png"
+      "map": "/img/map-tx.png"
     },
     {
       "location": "Анкара, Турция",
       "date": "30 июля",
-      "map": "img/map-ny.png"
+      "map": "/img/map-ny.png"
     }
   ]
 }

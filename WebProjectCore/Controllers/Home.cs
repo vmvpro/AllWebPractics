@@ -106,6 +106,35 @@ namespace WebProjectCore.Controllers
 			//var fileContent = System.IO.File.ReadAllText(webRoot + "/templates/subscribe.html");
 		}
 
+		[HttpGet]
+		public JsonResult GetJson(string id)
+		{
+			//return "<p>VMV HTML Produces</p>";
+			char separator = Path.DirectorySeparatorChar;
+			string webRoot = _env.WebRootPath;
+
+			string filePath = Path.Combine(webRoot, "data", "data.json");
+			string fileContent = System.IO.File.ReadAllText(filePath);
+
+			return new JsonResult(fileContent);
+			//return fileContent;
+
+			// Использование среды разработки
+			//var webRoot = _env.WebRootPath;
+			//var fileContent = System.IO.File.ReadAllText(webRoot + "/templates/subscribe.html");
+		}
+
+		//[HttpGet]
+		//public JsonResult OnGetList()
+		//{
+		//	List<string> lstString = new List<string>
+		//	{
+		//		"Val 1",
+		//		"Val 2",
+		//		"Val 3"
+		//	};
+		//	return new JsonResult(lstString);
+		//}
 
 
 
