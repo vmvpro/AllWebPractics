@@ -5,7 +5,8 @@
 
 $('nav a').on('click', function (e) {
 
-	console.log('nav a');
+	console.log('file: jq-load.js');
+	//console.log('nav a ');
 	
 	// Пользователь щелкает по ссылке nav
 	e.preventDefault();                                // Останавливаем загрузку новой сcылки

@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace WebProjectCore.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly IHttpContextAccessor _httpContextAccessor;
+		//private readonly IHttpContextAccessor _httpContextAccessor;
 
 		//public HomeController(IHttpContextAccessor httpContextAccessor)
 		//{
 		//	_httpContextAccessor = httpContextAccessor;
 		//}
+
+		private IHostingEnvironment _env;
+		public HomeController(IHostingEnvironment env)
+		{
+			_env = env;
+		}
 
 		public ViewResult Index()
 		{
@@ -30,16 +32,16 @@ namespace WebProjectCore.Controllers
 			return View();
 		}
 
-		public ViewResult PartialView()
+		public ViewResult GetServerInfo()
 		{
 
 			//return ViewComponent("PriorityList", new { maxPriority = 3, isDone = false });
-			ViewBag.Title = "PartialView";
-			return View("PartialView");
+			ViewBag.Title = "GetServerInfo";
+			return View();
 			return View("PartialPart1");
 		}
 
-		
+
 		public ViewResult GetAjax()
 		{
 			ViewBag.Title = "GetAjax";
@@ -49,7 +51,7 @@ namespace WebProjectCore.Controllers
 		[HttpGet]
 		public IActionResult GetAjaxResult(string result)
 		{
-			
+
 			return View();
 		}
 
@@ -67,10 +69,42 @@ namespace WebProjectCore.Controllers
 
 		[HttpGet]
 		public string OnGetAjax()
-		{	
+		{
 			return "Hello VMV from the server!!!";
 		}
 
+		//[HttpGet]
+		//public HtmlContentViewComponentResult GetHtml()
+		//{
+		//	return new HtmlContentViewComponentResult(
+		//		new HtmlString("<p>VMV HTML</p>"));
+		//}
+
+		//[HttpGet]
+		//public string GetHtml()
+		//{
+		//	return "<p>VMV HTML</p>";
+		//}
+
+		//[HttpGet("{id}")]
+
+
+		[HttpGet]
+		public ActionResult<string> GetHtml(string id)
+		{
+			//return "<p>VMV HTML Produces</p>";
+			char separator = Path.DirectorySeparatorChar;
+			string webRoot = _env.WebRootPath;
+
+			string filePath = Path.Combine(webRoot, "html", "getHtml_0" + id + ".html");
+			string fileContent = System.IO.File.ReadAllText(filePath);
+
+			return fileContent;
+
+			// Использование среды разработки
+			//var webRoot = _env.WebRootPath;
+			//var fileContent = System.IO.File.ReadAllText(webRoot + "/templates/subscribe.html");
+		}
 
 
 

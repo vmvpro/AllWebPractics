@@ -35,7 +35,7 @@ namespace WebProjectCore
 			{
 				routes.MapRoute(
 					name: "defaults",
-					template: "{controller}/{action}",
+					template: "{controller}/{action}/{id?}",
 					defaults: new { controller = "Home", action = "Index"}
 				);
 			});

@@ -8,11 +8,13 @@
 
 @section Body{
 
-	<nav>
-		<a href="#">Часть 1</a>
-		<a href="#">Часть 2</a>*
-		<a href="#">Часть 3</a>
+	<nav class="container-nav">
+		<a href="#">GetHtml</a>
+		<a href="#">GetJson</a>
+		<a href="#">GetList</a>
 	</nav>
+	
+	<section id="content"></section>
 
 	@*<section id="content">@await Component.InvokeAsync("JqLoadHtml")</section>*@
 }
@@ -21,7 +23,10 @@
 @section Scripts {
 
 	@*<script src="js/book/data-xml.js"></script>*@
-	<script src="~/js/book/data-json.js"></script>
-	<script src="~/js/book/jq-load.js"></script>
+	@*<script src="~/js/book/data-json.js"></script>*@
+	@*<script src="~/js/book/jq-load.js"></script>*@
+	<script src="~/js/my/getServerInfo.js"></script>
+
+
 
 }

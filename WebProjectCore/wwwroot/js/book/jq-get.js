@@ -33,35 +33,4 @@ $('#selector a').on('click', function (e) {
 //});
 
 
-$('#getAjax').on('click', function (e) {
 
-	console.log('getAjaxButton');
-	
-	//$content.append("<p>VMV Content</p>");
-	//$('<p>').append('VMV Content 2').appendTo($content);
-
-	//return;
-	$.ajax({
-		type: "GET",
-		//url: "/Home?handler=Ajax",
-		url: "/Home/OnGetAjax",
-		contentType: "application/text",
-		dataType: "text",
-		success: function (response) {
-
-			let _responseText = response;
-			let $content = $('#content');
-			$('<p>').append(_responseText).appendTo($content);
-
-			//var dvItems = $("#dvItems");
-			//dvItems.empty();
-			//$.each(response,
-			//	function (i, item) {
-			//		var $tr = $('<li>').append(item).appendTo(dvItems);
-			//	});
-		},
-		failure: function (response) {
-			alert(response);
-		}
-	});
-});

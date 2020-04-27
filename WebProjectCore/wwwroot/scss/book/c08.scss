@@ -38,6 +38,7 @@ h2 {
 	color: #000;
 	line-height: 1em;
 	letter-spacing: -.06em;
+	text-align:center;
 }
 
 h3 {
@@ -47,22 +48,19 @@ h3 {
 	font-family: marmelad, arial, sans-serif;
 }
 
-nav {
-	font-family: marmelad, arial, sans-serif;
-	float: right;
-	width: 600px;
-	padding-top: 30px;
-	font-size: 1.4em;
-	text-align: right;
-	text-transform: uppercase;
-}
 
 nav a {
-	padding-left: 30px;
+	//padding-left: 30px;
 }
 
 nav a:hover, a.current {
 	color: #d71a00;
+}
+
+clean-float{
+	content:"";
+	display:block;
+	clear:both;
 }
 
 a {
