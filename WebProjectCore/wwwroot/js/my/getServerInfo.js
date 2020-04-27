@@ -98,29 +98,29 @@ function AjaxGetJson(id) {
 }
 
 //// Ajax-запрос
-//function AjaxGetHtml(id) {
-//	$.ajax({
-//		type: "GET",
+function AjaxGetHtml(id) {
+	$.ajax({
+		type: "GET",
 
-//		// С использованием параметра
-//		url: "/Home/GetHtml?id=" + id,
+		// С использованием параметра
+		url: "/Home/GetHtml?id=" + id,
 
-//		// Определяем контент
-//		contentType: "text/html; charset=utf-8",
+		// Определяем контент
+		contentType: "text/html; charset=utf-8",
 
-//		// Определяем тип данных
-//		dataType: "html",
-//		success: function (response) {
+		// Определяем тип данных
+		dataType: "html",
+		success: function (response) {
 
-//			$('#content').append(response).hide().fadeIn('slow');
+			$('#content').append(response).hide().fadeIn('slow');
 
-//		},
-//		// В случае ошибки
-//		failure: function (response) {
-//			alert(response);
-//		}
-//	});
-//}
+		},
+		// В случае ошибки
+		failure: function (response) {
+			alert(response);
+		}
+	});
+}
 
 //// Подписка на событие
 //$('nav .a_').on('click_', function (e) {

@@ -7,23 +7,33 @@
 }
 
 @section Body{
-	
+
 	<h2>Регистрация</h2>
 
 	<div class="register-box">
-		
+
 		<div class="register-image"></div>
 
 		<form id="register" class="register-form" method="post">
-			<label for="name">Логин</label><input type="text" id="name" name="name" />
-			<label for="password">Пароль</label><input type="password" id="password" name="password" />
-			<label for="email">E-mail</label><input type="email" id="email" name="email" />
+
+			<label for="name">Логин</label>
+			<input type="text" id="name" name="name" />
+
+			<label for="password">Пароль</label>
+			<input type="password" id="password" name="password" />
+
+			<label for="email">E-mail</label>
+			<input type="email" id="email" name="email" />
+
+			// Очистка от float
 			<div Style="clear: both;"></div>
+
+			// Отправка данных на сервер через Ajax
 			<input class="submit-form" type="submit" value="Register" />
 		</form>
 
 	</div>
-	
+
 	<div id="newContentVMV"></div>
 }
 

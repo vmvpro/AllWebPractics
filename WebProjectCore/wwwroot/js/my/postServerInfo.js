@@ -5,45 +5,40 @@
 });
 
 function loadDocument() {
+
+	// Подписываемся на форме события input type submit
 	$('#register').on('submit', function (e) {
 		// Предотвращаем ее отправку
 		e.preventDefault();
 		console.log('submit');
 
+		// Формируем парметрыиз формы для отправки
 		var name = $('#name').val();
 		var password = $('#password').val();
 		var email = $('#email').val();
 
-		console.log('name:' + name);
-		console.log('password: ' + password);
-		console.log('email:' + email);
-
-		//return;
 		$.ajax({
+			//Метод Post на сервере
 			url: "/Home/PostAjaxForm",
 			contentType: "application/json; charset=utf-8",
 			method: "POST",
+			//---------------------------------------------
+			// Предполагаемый токен аутентификации
 			//beforeSend: function(xhr) {
 			//	xhr.setRequestHeader("XSRF-TOKEN", "value");
 			//},
 			//$('input:hidden[name="__RequestVerificationToken"]').val());
+			//---------------------------------------------
+			// Сериализация в JSON
 			data: JSON.stringify({
 				Name: name,
 				Password: password,
 				Email: email
 			}),
+			// Ответ от сервера
+			// (В нашем случае это будет список user-ов)
 			success: function (data) {
-				//addTableRow(data);
-				//$('.submit-form').val(data);
-				console.log(data);
-
-				//$('.register-box').empty();
-
 				
-				
-
-				//let items = JSON.parse(data);
-
 				// ФОРМИРУЕМ СТРОКУ С НОВЫМ КОНТЕНТОМ 
 				// (можно было бы также использовать работу с деревом DOM)
 				var newContent = '';
@@ -54,56 +49,48 @@ function loadDocument() {
 				}
 
 				// Обновляем страницу с новым контентом
-				//document.getElementById('content').innerHTML = newContent;
-
-				//$('.body-vmv h2').text(newContent);
-
-				$('#newContentVMV').empty();
-				$('p').append('VMV').appendTo('#newContentVMV');
+				//$('#newContentVMV').empty();
+				//$('p').append('VMV').appendTo('#newContentVMV');
 
 				document.getElementById('newContentVMV').innerHTML = newContent;
-
 
 			},
 			failure: function (response) {
 				alert(response);
 			}
 		});
-
-		//// Сериализуем ее данные
-		//var details = $('#register').serialize();         
-		//// Отправляем их с помощью $.post()
-		//$.post('register.php', details, function (data) { 
-		//	// Здесь выводим результат
-		//	$('#register').html(data);                    
-		//});
 	});
-
 }
 
-function PostAjaxForm(e) {
-	$('#register').on('submit', function (e) {
-		var item1 = $('#txtItem1').val();
-		var item2 = $('#txtItem2').val();
-		var item3 = $('#txtItem3').val();
+//// Сериализуем ее данные
+//var details = $('#register').serialize();         
+//// Отправляем их с помощью $.post()
+//$.post('register.php', details, function (data) { 
+//	// Здесь выводим результат
+//	$('#register').html(data);                    
+//});
 
-		$.ajax({
-			url: "api/reservation",
-			contentType: "application/json; charset=utf-8",
-			method: "POST",
+//function PostAjaxForm(e) {
+//	$('#register').on('submit', function (e) {
+//		var item1 = $('#txtItem1').val();
+//		var item2 = $('#txtItem2').val();
+//		var item3 = $('#txtItem3').val();
 
-			data: JSON.stringify({
-				clientName: this.elements["ClientName"].value,
-				location: this.elements["Location"].value
-			}),
-			success: function (data) {
-				addTableRow(data);
-			}
-		});
-	});
+//		$.ajax({
+//			url: "api/reservation",
+//			contentType: "application/json; charset=utf-8",
+//			method: "POST",
 
-
-}
+//			data: JSON.stringify({
+//				clientName: this.elements["ClientName"].value,
+//				location: this.elements["Location"].value
+//			}),
+//			success: function (data) {
+//				addTableRow(data);
+//			}
+//		});
+//	});
+//}
 
 
 // Испоьзуется когда необходимо отправить не по формуе, 

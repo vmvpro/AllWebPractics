@@ -65,8 +65,7 @@ namespace WebProjectCore.Controllers
 		[HttpPost]
 		public JsonResult PostAjaxForm()
 		{
-			string success = "Успешно!!!";
-
+			//string success = "Успешно!!!";
 			//return new JsonResult(success);
 
 			var _user = new User();
@@ -83,20 +82,20 @@ namespace WebProjectCore.Controllers
 					string requestBody = reader.ReadToEnd();
 					if (requestBody.Length > 0)
 					{
+						// Конвертируем наш полученный объект от клиента в клас User
 						_user = JsonConvert.DeserializeObject<User>(requestBody);
 						if (_user != null)
-						{
 							_repository.AddUser(_user);
-						}
 
+						// Так делаем, когда требуется отдельно отобразить 
+						// по параметрам (полям)
 						//if (_user != null)
 						//{
 						//	_name = _user.Name;
 						//	_password = _user.Password;
 						//	_email = _user.Email;
-
-
-
+						//}
+						
 						//	listUsers.Add(new User()
 						//	{
 						//		Name = _name,
@@ -107,13 +106,6 @@ namespace WebProjectCore.Controllers
 					}
 				}
 			}
-
-			//List<string> lstString = new List<string>
-			//{
-			//	sPostValue1,
-			//	sPostValue2,
-			//	sPostValue3
-			//};
 
 			return new JsonResult(_repository.Users);
 		}
