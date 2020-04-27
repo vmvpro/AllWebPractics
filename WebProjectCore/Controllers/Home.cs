@@ -16,9 +16,14 @@ namespace WebProjectCore.Controllers
 		//	_httpContextAccessor = httpContextAccessor;
 		//}
 
+		private List<IUser> listUsers;
+
 		private IHostingEnvironment _env;
-		public HomeController(IHostingEnvironment env)
+		private IRepository _repository;
+
+		public HomeController(IHostingEnvironment env, IRepository repository)
 		{
+			_repository = repository;
 			_env = env;
 		}
 
@@ -62,11 +67,13 @@ namespace WebProjectCore.Controllers
 		{
 			string success = "Успешно!!!";
 
-			return new JsonResult(success);
+			//return new JsonResult(success);
 
-			string sPostValue1 = "";
-			string sPostValue2 = "";
-			string sPostValue3 = "";
+			var _user = new User();
+
+			string _name = "";
+			string _password = "";
+			string _email = "";
 			{
 				MemoryStream stream = new MemoryStream();
 				Request.Body.CopyTo(stream);
@@ -76,13 +83,27 @@ namespace WebProjectCore.Controllers
 					string requestBody = reader.ReadToEnd();
 					if (requestBody.Length > 0)
 					{
-						var user = JsonConvert.DeserializeObject<User>(requestBody);
-						if (user != null)
+						_user = JsonConvert.DeserializeObject<User>(requestBody);
+						if (_user != null)
 						{
-							sPostValue1 = user.Name;
-							sPostValue2 = user.Password;
-							sPostValue3 = user.Email;
+							_repository.AddUser(_user);
 						}
+
+						//if (_user != null)
+						//{
+						//	_name = _user.Name;
+						//	_password = _user.Password;
+						//	_email = _user.Email;
+
+
+
+						//	listUsers.Add(new User()
+						//	{
+						//		Name = _name,
+						//		Password = _password,
+						//		Email = _email
+						//	});
+						//}
 					}
 				}
 			}
@@ -94,7 +115,7 @@ namespace WebProjectCore.Controllers
 			//	sPostValue3
 			//};
 
-			//return new JsonResult(lstString);
+			return new JsonResult(_repository.Users);
 		}
 
 

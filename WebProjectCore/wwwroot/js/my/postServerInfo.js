@@ -34,10 +34,39 @@ function loadDocument() {
 			}),
 			success: function (data) {
 				//addTableRow(data);
-				$('.submit-form').val(data);
+				//$('.submit-form').val(data);
 				console.log(data);
 
+				//$('.register-box').empty();
 
+				
+				
+
+				//let items = JSON.parse(data);
+
+				// ФОРМИРУЕМ СТРОКУ С НОВЫМ КОНТЕНТОМ 
+				// (можно было бы также использовать работу с деревом DOM)
+				var newContent = '';
+				for (var i = 0; i < data.length; i++) { // Перебираем объекты
+					newContent += '<div class="vmv-post">';
+					newContent += '<p><b>' + data[i].name + '</b></p>';
+					newContent += '</div>';
+				}
+
+				// Обновляем страницу с новым контентом
+				//document.getElementById('content').innerHTML = newContent;
+
+				//$('.body-vmv h2').text(newContent);
+
+				$('#newContentVMV').empty();
+				$('p').append('VMV').appendTo('#newContentVMV');
+
+				document.getElementById('newContentVMV').innerHTML = newContent;
+
+
+			},
+			failure: function (response) {
+				alert(response);
 			}
 		});
 

@@ -5,7 +5,14 @@ using System.Threading.Tasks;
 
 namespace WebProjectCore.Models
 {
-	public class User
+	public interface IUser
+	{
+		 string Name { get; set; }
+		 string Password { get; set; }
+		 string Email { get; set; }
+	}
+
+	public class User: IUser
 	{
 		public string Name { get; set; }
 		public string Password { get; set; }

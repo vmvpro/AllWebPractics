@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using WebProjectCore.Middleware;
+using WebProjectCore.Models;
 
 namespace WebProjectCore
 {
@@ -12,12 +13,14 @@ namespace WebProjectCore
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-			
+
+			services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			services.AddSingleton<IRepository, UserRepository>();
 
 			services.AddMvc();
-			//.AddDefaultTokenProviders();
-			services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
-			//services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			
+			
 
 		}
 
