@@ -38,23 +38,30 @@ $('nav a').on('click', function (e) {
 
 	$('#container').remove();                          // Удаляем старое содержимое
 
-
-
 	//console.log(e);
 	console.log('file: getServerInfo');
 
 	let text = e.target.innerText;
+
+	let $content = $('#content');
+	$content.empty();
+	//$content.remove();
+
 	console.log('text: ' + text);
 
 	switch (text) {
-		case 'GETHTML':
+		case 'CHAPTER 1':
 			AjaxFunction(1);
 			break;
-		case 'GETJSON':
+		case 'CHAPTER 2':
 			AjaxFunction(2);
 			break;
-		default:
+		case 'CHAPTER 4':
 			AjaxFunction(3);
+			break;
+		default:
+			
+			$('<p>').append('Not Content').appendTo($content);
 	}
 
 	//if (text === 'GETHTML') {
