@@ -14,7 +14,7 @@ namespace WebProjectCore
 		public void ConfigureServices(IServiceCollection services)
 		{
 
-			services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+			services.AddAntiforgery(o => o.HeaderName = "VMV-XSRF-TOKEN");
 			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 			services.AddSingleton<IRepository, UserRepository>();
 

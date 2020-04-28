@@ -17,28 +17,36 @@ function loadDocument() {
 		var password = $('#password').val();
 		var email = $('#email').val();
 
+
 		$.ajax({
 			//Метод Post на сервере
 			url: "/Home/PostAjaxForm",
 			contentType: "application/json; charset=utf-8",
 			method: "POST",
 			//---------------------------------------------
-			// Предполагаемый токен аутентификации
+			// Токен аутентификации объекта XMLHttpRequest
 			//beforeSend: function(xhr) {
-			//	xhr.setRequestHeader("XSRF-TOKEN", "value");
+			//	xhr.setRequestHeader("VMV-XSRF-TOKEN",
+			//		$('input:hidden[name="__RequestVerificationToken"]').val());
 			//},
-			//$('input:hidden[name="__RequestVerificationToken"]').val());
+			// Токен передаем в заголовок запроса
+			headers: {
+				"VMV-XSRF-TOKEN":
+					$('input[name="__RequestVerificationToken"]').val()
+			},
 			//---------------------------------------------
 			// Сериализация в JSON
 			data: JSON.stringify({
 				Name: name,
 				Password: password,
 				Email: email
-			}),
+			})
+
+			,
 			// Ответ от сервера
 			// (В нашем случае это будет список user-ов)
 			success: function (data) {
-				
+
 				// ФОРМИРУЕМ СТРОКУ С НОВЫМ КОНТЕНТОМ 
 				// (можно было бы также использовать работу с деревом DOM)
 				var newContent = '';
@@ -49,14 +57,14 @@ function loadDocument() {
 				}
 
 				// Обновляем страницу с новым контентом
-				//$('#newContentVMV').empty();
+				$('#newContentVMV').empty();
 				//$('p').append('VMV').appendTo('#newContentVMV');
 
 				document.getElementById('newContentVMV').innerHTML = newContent;
 
 			},
-			failure: function (response) {
-				alert(response);
+			error: function (data) {
+				alert(data);
 			}
 		});
 	});

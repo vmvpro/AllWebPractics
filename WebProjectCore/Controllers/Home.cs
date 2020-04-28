@@ -63,6 +63,7 @@ namespace WebProjectCore.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public JsonResult PostAjaxForm()
 		{
 			//string success = "Успешно!!!";
